@@ -1,0 +1,19 @@
+# compiled
+__pycache__/
+*.mo
+*.po~
+*.pot
+*.py[cod]
+
+# packaging
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# logging and testing
+.coverage
+
+# environments
+env/
+venv/
