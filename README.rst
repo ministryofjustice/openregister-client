@@ -74,7 +74,7 @@ References
 Copyright
 ---------
 
-Copyright |copy| 2017 HM Government (Ministry of Justice Digital Services). See LICENSE.txt for further details.
+Copyright (C) 2018 HM Government (Ministry of Justice Digital Services).
+See LICENSE.txt for further details.
 
-.. |copy| unicode:: 0xA9 .. copyright symbol
 .. _GitHub: https://github.com/ministryofjustice/openregister-client
