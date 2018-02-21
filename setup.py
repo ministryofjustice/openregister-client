@@ -8,11 +8,9 @@ from setuptools import find_packages, setup
 if sys.version_info[0:2] < (3, 6):
     warnings.warn('This package will only run on Python version 3.6+')
 
-# allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+root_path = os.path.abspath(os.path.dirname(__file__))
 
-package_info = importlib.import_module('openregister_client')
-with open('README.rst') as readme:
+with open(os.path.join(root_path, 'README.rst')) as readme:
     README = readme.read()
 
 install_requires = ['requests']
@@ -22,6 +20,8 @@ extras_require = {
     'markdown': ['Markdown'],
 }
 tests_require = ['flake8', 'responses']
+
+package_info = importlib.import_module('openregister_client')
 
 setup(
     name='openregister-client',
@@ -33,8 +33,9 @@ setup(
     license='MIT',
     description='A client for reading data from Registers provided by Government Digital Services',
     long_description=README,
+    keywords='openregister govuk',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
