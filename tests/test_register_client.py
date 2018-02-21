@@ -78,7 +78,7 @@ class ClientTestCase(unittest.TestCase):
             with responses.RequestsMock() as rsps:
                 rsps.add(rsps.GET, 'https://country.register.gov.uk/register', json=self.country_register_response)
                 register = Country()
-                self.assertIn('domain', dir(register))
+            self.assertIn('domain', dir(register))
         self.assertIn('Not all requests have been executed', str(manager.exception),
                       'Register info should be lazily loaded')
 
