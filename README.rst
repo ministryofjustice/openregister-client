@@ -50,6 +50,10 @@ Consuming non-json input formats is not supported and probably not necessary.
 Development
 -----------
 
+.. image:: https://travis-ci.org/ministryofjustice/openregister-client.svg?branch=master
+    :target: https://travis-ci.org/ministryofjustice/openregister-client
+
+
 Please report bugs and open pull requests on `GitHub`_.
 
 Use ``python setup.py test`` to run all tests.
