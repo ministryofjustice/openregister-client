@@ -69,10 +69,9 @@ To-do
 References
 ----------
 
-* http://www.openregister.org/
-* https://registers.cloudapps.digital/
-* https://registers-docs.cloudapps.digital/
-* http://openregister.github.io/specification/ (outdated)
+* https://www.registers.service.gov.uk/
+* https://docs.registers.service.gov.uk/
+* http://openregister.github.io/specification/ (outdated?)
 * http://open-registers-docs.readthedocs.io/en/latest/ (deleted)
 
 Copyright
