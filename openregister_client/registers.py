@@ -1,5 +1,8 @@
 import datetime
-import collections
+try:
+    from collections.abc import Mapping
+except ImportError:
+    from collections import Mapping
 from urllib.parse import urljoin, quote as urlquote
 
 import requests
@@ -221,8 +224,7 @@ class OpenRegister:
     def get_records(self, filters=None, page_size=None):
         # NB: uses page-based pagination (increments by 1)
         if filters:
-            assert isinstance(filters, collections.Mapping) and len(filters) == 1, \
-                'filters must be a mapping with 1 item'
+            assert isinstance(filters, Mapping) and len(filters) == 1, 'filters must be a mapping with 1 item'
             url = map(urlquote, next(iter(filters.items())))
             url = 'records/%s/%s' % tuple(url)
         else:
