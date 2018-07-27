@@ -185,11 +185,12 @@ class OpenRegister:
     entry_class = EntryClassDescriptor(BaseEntry)  # type: type
     record_class = RecordClassDescriptor(BaseRecord)  # type: type
 
-    def __init__(self, name, base_url=None):
+    def __init__(self, name, base_url=None, api_key=None):
         if not base_url:
             base_url = 'https://%s.register.gov.uk/' % name
         self.name = name
         self.base_url = base_url
+        self.api_key = api_key
 
     def __repr__(self):
         return '<Register %s>' % self.name
@@ -209,12 +210,19 @@ class OpenRegister:
     def expand_url_path(self, path):
         return urljoin(self.base_url, path)
 
-    def request(self, url, params=None):
-        logger.debug('Requesting %s with params: %s' % (url, params))
-        response = requests.get(url=url, params=params, headers={
+    @property
+    def request_headers(self):
+        headers = {
             'user-agent': user_agent,
             'accept': 'application/json',
-        })
+        }
+        if self.api_key:
+            headers['authorization'] = self.api_key
+        return headers
+
+    def request(self, url, params=None):
+        logger.debug('Requesting %s with params: %s' % (url, params))
+        response = requests.get(url=url, params=params, headers=self.request_headers)
         if response.status_code == 200:
             return response.json()
         if response.status_code == 404:
@@ -291,9 +299,9 @@ class Register(OpenRegister):
     """
     url_template = 'https://%(name)s.register.gov.uk/'
 
-    def __init__(self, name='register', url_template=None):
+    def __init__(self, name='register', url_template=None, api_key=None):
         self.url_template = url_template or self.url_template
-        super().__init__(name=name, base_url=self.make_register_url(name))
+        super().__init__(name=name, base_url=self.make_register_url(name), api_key=api_key)
         self.discover_complete = False
         self.field_registry = {}
         datatype_register = self.get_register('datatype')
@@ -356,7 +364,7 @@ class Register(OpenRegister):
             register_cls = NewRegister
         else:
             register_cls = OpenRegister
-        return register_cls(name, base_url=self.make_register_url(name))
+        return register_cls(name, base_url=self.make_register_url(name), api_key=self.api_key)
 
     def get_registers(self, filters=None, page_size=None):
         yield from map(self.make_register, (
