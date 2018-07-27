@@ -43,6 +43,9 @@ Usage samples:
     with open('models.py', 'wt') as f:
         f.write(ModelFactory(country_register).get_model_code())
 
+    # an API key can be provided when instantiating a register class
+    country_register = OpenRegister(name='country', api_key='YOUR API KEY')
+
 Caching is not implemented. Users of the library can store results of queries or subclass ``OpenRegister.request`` to add caching.
 
 Consuming non-json input formats is not supported and probably not necessary.
@@ -69,10 +72,9 @@ To-do
 References
 ----------
 
-* http://www.openregister.org/
-* https://registers.cloudapps.digital/
-* https://registers-docs.cloudapps.digital/
-* http://openregister.github.io/specification/ (outdated)
+* https://www.registers.service.gov.uk/
+* https://docs.registers.service.gov.uk/
+* http://openregister.github.io/specification/ (outdated?)
 * http://open-registers-docs.readthedocs.io/en/latest/ (deleted)
 
 Copyright
