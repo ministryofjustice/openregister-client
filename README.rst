@@ -53,8 +53,8 @@ Consuming non-json input formats is not supported and probably not necessary.
 Development
 -----------
 
-.. image:: https://travis-ci.org/ministryofjustice/openregister-client.svg?branch=master
-    :target: https://travis-ci.org/ministryofjustice/openregister-client
+.. image:: https://github.com/ministryofjustice/openregister-client/workflows/Run%20tests/badge.svg?branch=master
+    :target: https://github.com/ministryofjustice/openregister-client/actions
 
 
 Please report bugs and open pull requests on `GitHub`_.
