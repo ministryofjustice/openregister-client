@@ -61,7 +61,9 @@ Please report bugs and open pull requests on `GitHub`_.
 
 Use ``python setup.py test`` to run all tests.
 
-Distribute a new version by updating the ``VERSION`` tuple in ``openregister_client/__init__.py`` and run ``python setup.py sdist bdist_wheel upload``.
+Distribute a new version by updating the ``VERSION`` tuple in ``openregister_client/__init__.py`` and
+publishing a release in GitHub (this triggers a GitHub Actions workflow to automatically upload it).
+Alternatively, run ``python setup.py sdist bdist_wheel upload`` locally.
 
 To-do
 -----
