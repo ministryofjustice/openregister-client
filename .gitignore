@@ -11,8 +11,9 @@ __pycache__/
 build/
 dist/
 
-# logging and testing
+# testing
 .coverage
+.tox/
 
 # environments
 env/
