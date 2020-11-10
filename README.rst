@@ -82,7 +82,7 @@ References
 Copyright
 ---------
 
-Copyright (C) 2018 HM Government (Ministry of Justice Digital Services).
+Copyright (C) 2020 HM Government (Ministry of Justice Digital & Technology).
 See LICENSE.txt for further details.
 
 .. _GitHub: https://github.com/ministryofjustice/openregister-client
