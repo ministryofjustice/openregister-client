@@ -277,7 +277,7 @@ class ClientTestCase(unittest.TestCase):
                         'text': 'A combination of a date and a time in the format `CCYY-MM-DDThh:mm:ss[Z]` '
                                 'as described in chapter 5.4 of [ISO 8601]'
                                 '(http://en.wikipedia.org/wiki/ISO_8601). The value can be truncated to '
-                                'just the most significant digits, for example \'2014-05\'. '
+                                "just the most significant digits, for example '2014-05'. "
                                 'Time values, where present, should be in UTC.'
                     }
                 ]

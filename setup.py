@@ -20,7 +20,10 @@ extras_require = {
     'pytz': ['pytz'],
     'markdown': ['Markdown'],
 }
-tests_require = ['flake8', 'responses']
+tests_require = [
+    'flake8', 'flake8-bugbear', 'flake8-quotes', 'flake8-blind-except', 'flake8-debugger', 'pep8-naming',
+    'responses',
+]
 
 package_info = importlib.import_module('openregister_client')
 

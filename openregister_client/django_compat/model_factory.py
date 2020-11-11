@@ -164,13 +164,13 @@ class {factory.model_name}(models.Model):
     @property
     def register_methods(self):
         if not self.can_make_root_register:
-            return '''
+            return """
     @classmethod
     def get_register_client(cls):
         return OpenRegister(name={register.name!r}, base_url={register.base_url!r})
-        '''.format(register=self.register).strip()
+        """.format(register=self.register).strip()
 
-        return '''
+        return """
     @classmethod
     def get_register_client(cls):
         return cls.get_root_register_client().get_register({register.name!r})
@@ -182,7 +182,7 @@ class {factory.model_name}(models.Model):
     @classmethod
     def get_root_register_client(cls):
         return Register(name={root_register.name!r}, url_template={root_register.url_template!r})
-        '''.format(register=self.register, root_register=self.register.get_root_register()).strip()
+        """.format(register=self.register, root_register=self.register.get_root_register()).strip()
 
     @property
     def copy_record_item(self):

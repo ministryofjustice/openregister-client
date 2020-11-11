@@ -28,8 +28,8 @@ class BaseItem(Resource):
 class TimedItemMixin:
     @property
     def is_current(self):
-        start_date = getattr(self, 'start_date')
-        end_date = getattr(self, 'end_date')
+        start_date = self.start_date
+        end_date = self.end_date
         this_moment = now()
         this_moment_str = '%sZ' % this_moment.isoformat(timespec='seconds')
         if start_date and type(start_date) == type(end_date):
