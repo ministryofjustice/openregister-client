@@ -1,6 +1,10 @@
 Open Registers Client
 =====================
 
+**DEPRECATED**
+
+GOV.UK Registers were discontinued in March 2021 so this client is no longer being developed or updated.
+
 Usage
 -----
 
@@ -57,12 +61,10 @@ Development
     :target: https://github.com/ministryofjustice/openregister-client/actions
 
 
-Please report bugs and open pull requests on `GitHub`_.
-
 Use ``python setup.py test`` to run all tests.
 
 Distribute a new version by updating the ``VERSION`` tuple in ``openregister_client/__init__.py`` and
-publishing a release in GitHub (this triggers a GitHub Actions workflow to automatically upload it).
+publishing a release in `GitHub`_ (this triggers a GitHub Actions workflow to automatically upload it).
 Alternatively, run ``python setup.py sdist bdist_wheel upload`` locally.
 
 To-do
@@ -74,9 +76,9 @@ To-do
 References
 ----------
 
-* https://www.registers.service.gov.uk/
-* https://docs.registers.service.gov.uk/
-* http://openregister.github.io/specification/ (outdated?)
+* https://www.registers.service.gov.uk/ (no longer available)
+* https://docs.registers.service.gov.uk/ (no longer available)
+* http://openregister.github.io/specification/ (no longer available; was possibly outdated before)
 * http://open-registers-docs.readthedocs.io/en/latest/ (deleted)
 
 Copyright
